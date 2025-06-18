@@ -1,4 +1,4 @@
-package com.mostershop.backend.model;
+package com.monstershop.backend.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
