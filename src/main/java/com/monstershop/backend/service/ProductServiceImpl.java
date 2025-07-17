@@ -1,6 +1,6 @@
 package com.monstershop.backend.service;
 
-import com.monstershop.backend.exception.ResourceNotFoundException;
+import com.monstershop.backend.exception.EntityNotFoundException;
 import com.monstershop.backend.model.Product;
 import com.monstershop.backend.repository.ProductRepository;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getProductById(Long id) {
         return productRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Product not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Product not found"));
     }
 
     @Override
