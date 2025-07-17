@@ -1,6 +1,6 @@
 package com.monstershop.backend.service;
 
-import com.monstershop.backend.exception.ResourceNotFoundException;
+import com.monstershop.backend.exception.EntityNotFoundException;
 import com.monstershop.backend.model.Review;
 import com.monstershop.backend.model.Product;
 import com.monstershop.backend.repository.ReviewRepository;
@@ -26,7 +26,7 @@ public class ReviewServiceImpl implements ReviewService {
     @Override
     public Review createReview(Long productId, Review review) {
         Product product = productRepository.findById(productId)
-                .orElseThrow(() -> new ResourceNotFoundException("Product not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Product not found"));
         review.setProduct(product);
         Review savedReview = reviewRepository.save(review);
 
