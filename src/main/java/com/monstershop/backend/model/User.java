@@ -27,6 +27,13 @@ public class User {
     @Size(min = 8, message = "Password must be at least 8 characters")
     private String password;
 
+    public List<Review> getReviews(){
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
 
     //reseña del usuario: Como un usuario puede dejar varias reseñas
     @OneToMany(mappedBy = "user")
@@ -61,5 +68,9 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public User(List<Review> reviews) {
+        this.reviews = reviews;
     }
 }
