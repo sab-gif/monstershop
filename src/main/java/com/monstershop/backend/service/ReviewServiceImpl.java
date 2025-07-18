@@ -26,7 +26,7 @@ public class ReviewServiceImpl implements ReviewService {
     @Override
     public Review createReview(Long productId, Review review) {
         Product product = productRepository.findById(productId)
-                .orElseThrow(() -> new EntityNotFoundException("Product not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Review", productId));
         review.setProduct(product);
         Review savedReview = reviewRepository.save(review);
 
