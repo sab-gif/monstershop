@@ -1,4 +1,8 @@
 package com.monstershop.backend.dto;
 
-public class UserRequest {
-}
+
+public record UserRequest (
+        String username,
+        String email,
+        String password
+){}
