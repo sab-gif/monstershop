@@ -35,7 +35,7 @@ public class User {
         this.reviews = reviews;
     }
 
-    //reseña del usuario: Como un usuario puede dejar varias reseñas
+
     @OneToMany(mappedBy = "user")
     private List<Review> reviews;
 
@@ -45,7 +45,7 @@ public class User {
         this.password = password;
     }
 
-    //Getters y Setter
+
     public String getUsername() {
         return username;
     }
